@@ -1,5 +1,7 @@
 # minecraft-server-thing
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nightttide/minecraft-server-thing)
+
 ```bash
 sudo apt-get update
 
