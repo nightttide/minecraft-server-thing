@@ -4,7 +4,7 @@
 sudo apt-get update
 
 #latest java runtime from microsoft on ubuntu 22.04 (2023-10-12)
-```
+
 curl -sSL -O https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
