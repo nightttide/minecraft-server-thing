@@ -3,14 +3,16 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nightttide/minecraft-server-thing)
 
 ```bash
-sudo apt-get update
-
 #latest java runtime from microsoft on ubuntu 22.04 (2023-10-12)
 
 curl -sSL -O https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
 rm packages-microsoft-prod.deb
 sudo apt-get install msopenjdk-21
+
+#Change the java runtime that is being used 
+sudo update-java-alternatives --set msopenjdk-21-amd64
 
 mkdir minecraft_server
 cd minecraft_server
