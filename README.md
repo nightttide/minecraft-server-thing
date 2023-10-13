@@ -3,27 +3,10 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nightttide/minecraft-server-thing)
 
 ```bash
-#latest java runtime from microsoft on ubuntu 22.04 (2023-10-12)
+sudo apt-get install docker
+docker pull sirplexus/minecraft-server-standalone:latest
 
-curl -sSL -O https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update
-rm packages-microsoft-prod.deb
-sudo apt-get install msopenjdk-21
+docker container create --publish 25565:25565/tcp --name "Crafty-Photonics" --env RAM=1G sirplexus/minecraft-server-standalone
 
-#Change the java runtime that is being used 
-sudo update-java-alternatives --set msopenjdk-21-amd64
-
-mkdir minecraft_server
-cd minecraft_server
-
-#latest server (2023-10-12)
-wget https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar
-
-echo "eula=true" > eula.txt
-
-echo "java -Xmx1024M -Xms1024M -jar server.jar nogui" > start.sh
-chmod +x start.sh
-
-./start.sh
+docker container start Crafty-Photonics
 ```
